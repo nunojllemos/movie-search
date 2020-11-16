@@ -1,0 +1,32 @@
+@import '../../style/sass/variables'
+
+.card-link
+  text-decoration: none
+.card
+  width: 20rem
+  height: 27rem
+  background-color: #fff
+  margin: 1rem 0
+  background-size: cover
+  background-position: top
+  cursor: pointer
+  filter: drop-shadow(0 .3rem .35rem rgba(0,0,0,.75))
+  &:hover > .movie-info
+    opacity: 100%
+  .movie-info
+    background-color: rgba(37, 36, 38, .8)
+    border-bottom: 2px solid $salmon
+    height: 27rem
+    color: white
+    opacity: 0
+    transition: .35s
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    padding: 1rem
+    h2
+      font-size: 1.8rem
+      margin-bottom: 1.5rem
+    p
+      font-size: 1.2rem
+      font-weight: $thin

@@ -1,0 +1,32 @@
+@import '../../style/sass/variables'
+
+.no-results-wrapper
+  height: 400px
+  width: 75%
+  padding: 50px
+  background-color: $gray
+  display: flex
+  filter: drop-shadow(0 0 .75rem rgba(0,0,0,.9))
+  margin: 0 auto
+  .bg-image
+    width: 100%
+    height: 100%
+    background-image: url(../../images/web_search.svg)
+    background-size: 60%
+    background-repeat: no-repeat
+    background-position: right bottom
+    display: flex
+    flex-direction: column
+    justify-content: center
+    .dash
+      height: .3rem
+      width: 5rem
+      background-color: $salmon
+      margin-bottom: 2rem
+    h2
+      color: $salmon
+      font-size: 7rem
+    p
+      color: $darkBlue
+      font-size: 1.6rem
+      line-height: 2rem

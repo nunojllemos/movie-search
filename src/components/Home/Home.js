@@ -3,6 +3,7 @@ import axios from "axios";
 import Search from "../Search/Search";
 import LandPage from "../LandPage/LandPage";
 import Footer from "../Footer/Footer";
+import MoviesList from "../MoviesList/MoviesList";
 
 const Home = () => {
 	const [search, setSearch] = useState("");
@@ -11,7 +12,6 @@ const Home = () => {
 
 	const handleSubmit = (search) => {
 		setSearch(search);
-		console.log(search);
 	};
 
 	const fetchData = (search) => {
@@ -30,6 +30,7 @@ const Home = () => {
 		return searchResult;
 	};
 
+	// Lifecycle
 	useEffect(() => {
 		if (!firstLoad.current) {
 			fetchData(search);
@@ -42,7 +43,11 @@ const Home = () => {
 	let content = (
 		<>
 			<Search handleSubmit={handleSubmit} />
-			{firstLoad.current ? <LandPage /> : <h1>MOVIE LIST</h1>}
+			{firstLoad.current ? (
+				<LandPage />
+			) : (
+				<MoviesList moviesList={moviesList} />
+			)}
 			<Footer />
 		</>
 	);
