@@ -189,18 +189,21 @@ footer p #heart, footer p #name {
 .no-results-wrapper {
   height: 400px;
   width: 75%;
-  padding: 50px;
+  padding: 5rem;
   background-color: #f2f2f2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.9));
           filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.9));
   margin: 0 auto;
 }
 
 .no-results-wrapper .bg-image {
-  width: 100%;
+  width: 65rem;
   height: 100%;
   background-image: url(../../images/web_search.svg);
   background-size: 60%;
@@ -234,5 +237,109 @@ footer p #heart, footer p #name {
   color: #2f2e41;
   font-size: 1.6rem;
   line-height: 2rem;
+}
+
+.spinner {
+  -webkit-animation: rotator 1.5s linear infinite;
+          animation: rotator 1.5s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: dash 1.5s ease-in-out infinite, colors 6s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite, colors 6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  50% {
+    stroke-dashoffset: 25;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 100;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  50% {
+    stroke-dashoffset: 25;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 100;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
 }
 /*# sourceMappingURL=main.css.map */

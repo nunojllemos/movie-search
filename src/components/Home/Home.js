@@ -8,6 +8,7 @@ import MoviesList from "../MoviesList/MoviesList";
 const Home = () => {
 	const [search, setSearch] = useState("");
 	const [moviesList, setMoviesList] = useState([]);
+	const [loading, setLoading] = useState(false);
 	const firstLoad = useRef(true);
 
 	const handleSubmit = (search) => {
@@ -15,15 +16,19 @@ const Home = () => {
 	};
 
 	const fetchData = (search) => {
+		setLoading(true);
+
 		const searchResult = axios
 			.get(`http://www.omdbapi.com/?apikey=443f62b0&s=${search}`)
 			.then((res) => {
 				if (res.data.Response === "True") {
 					// store results found in moviesList state
 					setMoviesList(res.data.Search);
+					setLoading(false);
 				} else {
 					// no results found
 					setMoviesList([]);
+					setLoading(false);
 				}
 			});
 
@@ -46,7 +51,7 @@ const Home = () => {
 			{firstLoad.current ? (
 				<LandPage />
 			) : (
-				<MoviesList moviesList={moviesList} />
+				<MoviesList loading={loading} moviesList={moviesList} />
 			)}
 			<Footer />
 		</>
