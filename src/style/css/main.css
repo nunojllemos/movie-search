@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  background-color: #2f2e41;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+html .app-container {
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form {
+  width: 75%;
+}
+
+form .input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.8rem;
+  color: #fff;
+  background-color: #2f2e41;
+  outline: none;
+  margin: 4rem 0;
+  border: none;
+  border-bottom: 1.5px solid #ff6584;
+}
+
+form .input::-webkit-input-placeholder {
+  color: #ff6584;
+}
+
+form .input:-ms-input-placeholder {
+  color: #ff6584;
+}
+
+form .input::-ms-input-placeholder {
+  color: #ff6584;
+}
+
+form .input::placeholder {
+  color: #ff6584;
+}
+
+.land-page-wrapper {
+  width: 75%;
+  height: 40rem;
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.land-page-wrapper .land-page-image {
+  width: 100%;
+  height: 800px;
+  background-image: url(../../images/home_cinema.svg);
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.land-page-wrapper h2 {
+  color: #ff6584;
+  font-size: 5rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+}
+
+footer p {
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  font-weight: 300;
+  color: #f2f2f2;
+}
+
+footer p #heart, footer p #name {
+  color: #ff6584;
+}
+/*# sourceMappingURL=main.css.map */
