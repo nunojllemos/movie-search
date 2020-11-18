@@ -1,0 +1,44 @@
+@import '../../style/sass/variables'
+
+.wrapper
+  height: 40rem
+  width: 65%
+  display: flex
+  background-color: #fff
+  filter: drop-shadow(0 0 .75rem rgba(0,0,0,.9))
+  margin: auto
+  .image
+    width: 50%
+    height: 100%
+    background-image: url(../../images/not_found.svg)
+    background-size: 100%
+    background-repeat: no-repeat
+    background-position: right
+    background-color: #fff
+  .info
+    padding: 1.5rem
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: center
+    .dash
+      height: .3rem
+      width: 5rem
+      background-color: $salmon
+      margin-bottom: 2rem
+    h2
+      color: $salmon
+      font-size: 7rem
+      margin-bottom: 2rem
+    p
+      color: $darkBlue
+      font-size: 1.6rem
+      line-height: 2rem
+    button
+      margin-top: 4rem
+      background-color: $salmon
+      border: none
+      padding: .75rem 3rem
+      .home-link
+        color: #fff
+        text-decoration: none

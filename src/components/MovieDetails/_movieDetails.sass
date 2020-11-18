@@ -1,0 +1,93 @@
+@import '../../style/sass/variables'
+
+.back-home
+  width: 3rem
+
+.movie-details-container
+  width: 100%
+  padding: 5rem 0
+
+.movie-data-container
+  margin-top: 5rem
+  width: 100%
+  display: flex
+  color: $gray
+  .movie-info-container
+    width: 50%
+    .movie-info
+      width: 80%
+      display: grid
+      gap: 3rem
+      grid-template-columns: 40% 30% 30%
+      margin: 3.5rem 0
+      .plot
+        grid-column: span 3
+    .title
+      font-size: 1.4rem
+      font-weight: $bold
+      color: $softBlue
+    .text
+      font-size: 1.4rem
+      color: $gray
+    ul
+      list-style: none
+      display: flex
+      li
+        padding-right: 1.2rem
+        color: $softBlue
+        display: flex
+        align-items: center
+      .movie-rate
+        font-size: 1.4rem
+        font-weight: $bold
+        background-color: $gray
+        color: $darkBlue
+        padding: .4rem
+        border-radius: .3rem
+        text-align: center
+      .rating-container
+        width: 10rem
+        height: 3.5rem
+        display: flex
+        align-items: center
+        margin: 2.5rem 0
+        .icon
+          width: 4.5rem
+          height: 100%
+          border-radius: .5rem 0 0 .5rem
+          background-position: center
+          background-repeat: no-repeat
+          background-size: 70%
+        .rating
+          border-top: 1px solid $softBlue
+          border-right: 1px solid $softBlue
+          border-bottom: 1px solid $softBlue
+          border-radius: 0 .5rem .5rem 0
+          width: 5.5rem
+          padding: .75rem 0
+          color: $gray
+          font-size: 1.2rem
+          text-align: center
+          letter-spacing: 0.15rem
+        .imdb
+          border: 1px solid #FF9F1C
+          background-color: #FF9F1C
+          background-image: url(../../images/logo-imdb.svg)
+        .rotten-tomatoes
+          border: 1px solid #FF4040
+          background-color: #FF4040
+          background-image: url(../../images/logo-rotten-tomatoes.svg)
+          background-size: 40%
+  h1
+    font-size: 5rem
+    font-weight: $veryBold
+    margin: 3.5rem 0
+  .movie-poster-container
+    width: 50%
+    display: flex
+    justify-content: flex-end
+    .movie-poster
+      img
+        width: 40rem
+        border-radius: 1rem
+        filter: drop-shadow(0 .3rem .4rem black)
