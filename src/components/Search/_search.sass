@@ -1,16 +1,43 @@
 @import '../../style/sass/variables'
 
 form
+  position: relative
   width: 75%
+  label
+    position: absolute
+    color: $softBlue
+    font-size: 1.4rem
+    text-transform: uppercase
+    top: 5rem
+    left: 1rem
+    letter-spacing: .2rem
+    transition: font-size .3s, top .3s
+    z-index: -1
+    user-select: none
   .input
     width: 100%
     padding: 1rem
     font-size: 1.8rem
     color: #fff
-    background-color: $darkBlue
+    background-color: transparentize(#fff, 1)
     outline: none
     margin: 4rem 0
     border: none
     border-bottom: 1.5px solid $salmon
-    &::placeholder
-      color: $salmon
+    z-index: 1
+  .delete-input-data
+    color: $salmon
+    text-transform: uppercase
+    font-size: 1.2rem
+    letter-spacing: 0.3rem
+    position: absolute
+    top: 4.8rem
+    right: 1rem
+    cursor: pointer
+    transition: .3s
+    opacity: 0
+  .show
+    opacity: 1
+  .up
+    top: 3.2rem
+    font-size: .8rem

@@ -5,6 +5,16 @@ import LandPage from "../LandPage/LandPage";
 import MoviesList from "../MoviesList/MoviesList";
 
 const Home = () => {
+	// session storage
+	const getSessionStorageData = (data) => {
+		return JSON.parse(window.sessionStorage.getItem(data));
+	};
+
+	const setSessionStorageData = (data) => {
+		window.sessionStorage.setItem("search", JSON.stringify(data));
+	};
+
+	// state
 	const [search, setSearch] = useState("");
 	const [moviesList, setMoviesList] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -23,6 +33,7 @@ const Home = () => {
 				if (res.data.Response === "True") {
 					// store results found in moviesList state
 					setMoviesList(res.data.Search);
+					setSessionStorageData(title);
 					setLoading(false);
 				} else {
 					// no results found
@@ -38,7 +49,12 @@ const Home = () => {
 	useEffect(() => {
 		if (!firstLoad.current) {
 			fetchData(search);
-		} else {
+		}
+
+		if (firstLoad.current) {
+			if (getSessionStorageData("search") !== null) {
+				setSearch(getSessionStorageData("search"));
+			}
 			firstLoad.current = false;
 		}
 	}, [search]);

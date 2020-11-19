@@ -38,7 +38,25 @@ html .app-container {
 }
 
 form {
+  position: relative;
   width: 75%;
+}
+
+form label {
+  position: absolute;
+  color: #9998b1;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  top: 5rem;
+  left: 1rem;
+  letter-spacing: .2rem;
+  -webkit-transition: font-size .3s, top .3s;
+  transition: font-size .3s, top .3s;
+  z-index: -1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 form .input {
@@ -46,27 +64,35 @@ form .input {
   padding: 1rem;
   font-size: 1.8rem;
   color: #fff;
-  background-color: #2f2e41;
+  background-color: rgba(255, 255, 255, 0);
   outline: none;
   margin: 4rem 0;
   border: none;
   border-bottom: 1.5px solid #ff6584;
+  z-index: 1;
 }
 
-form .input::-webkit-input-placeholder {
+form .delete-input-data {
   color: #ff6584;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.3rem;
+  position: absolute;
+  top: 4.8rem;
+  right: 1rem;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
 }
 
-form .input:-ms-input-placeholder {
-  color: #ff6584;
+form .show {
+  opacity: 1;
 }
 
-form .input::-ms-input-placeholder {
-  color: #ff6584;
-}
-
-form .input::placeholder {
-  color: #ff6584;
+form .up {
+  top: 3.2rem;
+  font-size: .8rem;
 }
 
 .land-page-wrapper {
@@ -346,7 +372,8 @@ aside p #heart, aside p #name {
           justify-content: center;
   -webkit-filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.9));
           filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.9));
-  margin: auto;
+  margin: 22rem auto;
+  border-radius: 1.5rem;
 }
 
 .no-results-wrapper .bg-image {
@@ -395,7 +422,9 @@ aside p #heart, aside p #name {
   background-color: #fff;
   -webkit-filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.9));
           filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.9));
-  margin: auto;
+  margin: 22rem auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
 }
 
 .wrapper .image {
