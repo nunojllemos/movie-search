@@ -1,0 +1,34 @@
+@import '../../style/sass/variables'
+
+.about-container
+  margin-top: 5rem
+  border-radius: 8rem 0
+  width: 90%
+  background-color: $gray
+  display: flex
+  .bg-about
+    width: 50%
+    height: 60rem
+    background-image: url(../../images/web_developer.svg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 85%
+  .info-about
+    width: 50%
+    padding: 5rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    h2
+      color: $salmon
+      font-size: 4.5rem
+    p
+      color: $darkBlue
+      font-size: 1.8rem
+      letter-spacing: 0.05rem
+      line-height: 2.8rem
+      margin-bottom: 3rem
+      a
+        color: $salmon
+        &:visited
+          color: $salmon

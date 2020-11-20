@@ -47,11 +47,11 @@ const Home = () => {
 
 	// Lifecycle
 	useEffect(() => {
+		// console.log("here");
+
 		if (!firstLoad.current) {
 			fetchData(search);
-		}
-
-		if (firstLoad.current) {
+		} else {
 			if (getSessionStorageData("search") !== null) {
 				setSearch(getSessionStorageData("search"));
 			}

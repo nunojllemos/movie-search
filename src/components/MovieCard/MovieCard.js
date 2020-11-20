@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import heart from "../../images/heart-white.svg";
 import heartFull from "../../images/heart-full.svg";
+import noImage from "../../images/no-photo.svg";
 
 const MovieCard = ({ movie }) => {
 	const heartFullFav = useRef();
@@ -23,7 +24,12 @@ const MovieCard = ({ movie }) => {
 		<Link className='card-link' to={`/${movie.imdbID}`}>
 			<div
 				className='card'
-				style={{ backgroundImage: `url(${movie.Poster})` }}
+				style={{
+					backgroundImage: `url(${
+						movie.Poster !== "N/A" ? movie.Poster : noImage
+					})`,
+					backgroundSize: `${movie.Poster !== "N/A" ? "cover" : "50%"}`,
+				}}
 				key={movie.imdbID}>
 				<img
 					ref={heartFullFav}
