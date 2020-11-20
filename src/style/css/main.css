@@ -167,6 +167,21 @@ aside p #heart, aside p #name {
   text-decoration: none;
 }
 
+.card-link img {
+  width: 2.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.card-link .heart-full {
+  display: none;
+}
+
+.card-link .view {
+  display: block;
+}
+
 .card {
   width: 20rem;
   height: 27rem;
@@ -202,6 +217,7 @@ aside p #heart, aside p #name {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 1rem;
+  position: relative;
 }
 
 .card .movie-info h2 {
@@ -277,6 +293,61 @@ aside p #heart, aside p #name {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.movie-data-container .movie-info-container ul .favorite-container .bg-heart {
+  cursor: pointer;
+  width: 4rem;
+  height: 3.5rem;
+  border-radius: .3rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.movie-data-container .movie-info-container ul .favorite-container .bg-heart:hover {
+  background-color: #FF4040;
+  background-image: url(../../images/heart-full.svg);
+  border: 1px solid #FF4040;
+}
+
+.movie-data-container .movie-info-container ul .favorite-container .fav {
+  background-color: #FF4040;
+  background-image: url(../../images/heart-full.svg);
+  border: 1px solid #FF4040;
+}
+
+.movie-data-container .movie-info-container ul .favorite-container .not-fav {
+  background-color: transparent;
+  background-image: url(../../images/heart-grey.svg);
+  border: 1px solid #9998b1;
+}
+
+.movie-data-container .movie-info-container ul .favorite-container .favorite-button {
+  cursor: pointer;
+  background-color: transparent;
+  width: 4rem;
+  height: 3.5rem;
+  border: 1px solid #9998b1;
+  border-radius: .3rem;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.movie-data-container .movie-info-container ul .favorite-container .favorite-button:hover {
+  background-color: #FF4040;
+  border: 1px solid #FF4040;
 }
 
 .movie-data-container .movie-info-container ul .movie-rate {

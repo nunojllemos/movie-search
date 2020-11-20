@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import back from "../../images/back-button.svg";
@@ -8,22 +8,67 @@ import NotFound from "../404/NotFound";
 const MovieDetails = ({ match }) => {
 	const [movie, setMovie] = useState();
 	const [loading, setLoading] = useState(true);
+	const fav = useRef(null);
+	const isFavorite = useRef(false);
 	const id = match.params.id;
+	let favorites;
+
+	if (JSON.parse(window.sessionStorage.getItem("favorites"))) {
+		favorites = JSON.parse(window.sessionStorage.getItem("favorites"));
+		favorites.forEach((movieID) => {
+			if (movieID === id) {
+				isFavorite.current = true;
+			}
+		});
+	}
 
 	let content = <Spinner />;
 
+	const toggleFavorite = (id) => {
+		// checks if there's any value in session storage
+		if (!favorites || favorites.length === 0) {
+			// creates session storage
+			window.sessionStorage.setItem("favorites", JSON.stringify([id]));
+
+			// changes UI
+			favoriteInterface(fav, "fav", "not-fav");
+			isFavorite.current = true;
+		} else {
+			if (!isFavorite.current) {
+				// if not, adds to favorites
+				favorites.push(id);
+				window.sessionStorage.setItem("favorites", JSON.stringify(favorites));
+
+				// UI changes
+				favoriteInterface(fav, "fav", "not-fav");
+			} else {
+				// if yes, removes from favorites
+				const index = favorites.indexOf(id);
+				favorites.splice(index, 1);
+				window.sessionStorage.setItem("favorites", JSON.stringify(favorites));
+
+				// UI changes
+				favoriteInterface(fav, "not-fav", "fav");
+			}
+		}
+	};
+
+	const favoriteInterface = (ref, add, remove) => {
+		ref.current.classList.add(add);
+		ref.current.classList.remove(remove);
+	};
+
 	useEffect(() => {
-		return axios
-			.get(`http://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
-			.then((res) => {
-				if (res.data.Response === "True") {
-					setMovie(res.data);
-					setLoading(false);
-				} else {
-					setMovie("");
-					setLoading(false);
-				}
-			});
+		// fetch data
+		axios.get(`http://www.omdbapi.com/?apikey=443f62b0&i=${id}`).then((res) => {
+			if (res.data.Response === "True") {
+				setMovie(res.data);
+				setLoading(false);
+			} else {
+				setMovie("");
+				setLoading(false);
+			}
+		});
 	}, [id]);
 
 	if (!loading) {
@@ -69,7 +114,16 @@ const MovieDetails = ({ match }) => {
 										</div>
 									</div>
 								</li>
-								<li>Favorite</li>
+								<li className='favorite-container'>
+									<div
+										ref={fav}
+										onClick={() => {
+											toggleFavorite(id);
+										}}
+										className={
+											isFavorite.current ? "bg-heart fav" : "bg-heart not-fav"
+										}></div>
+								</li>
 							</ul>
 							<div className='movie-info'>
 								<div className='plot'>

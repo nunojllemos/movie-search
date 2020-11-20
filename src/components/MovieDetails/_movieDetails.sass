@@ -37,6 +37,45 @@
         color: $softBlue
         display: flex
         align-items: center
+      .favorite-container
+        .bg-heart
+          cursor: pointer
+          width: 4rem
+          height: 3.5rem
+          border-radius: .3rem
+          // background-color: transparent
+          // background-image: url(../../images/heart-grey.svg)
+          // border: 1px solid $softBlue
+          background-repeat: no-repeat
+          background-position: center
+          transition: .2s
+          &:hover
+            background-color: #FF4040
+            background-image: url(../../images/heart-full.svg)
+            border: 1px solid #FF4040
+        .fav
+          background-color: #FF4040
+          background-image: url(../../images/heart-full.svg)
+          border: 1px solid #FF4040
+        .not-fav
+          background-color: transparent
+          background-image: url(../../images/heart-grey.svg)
+          border: 1px solid $softBlue
+        .favorite-button
+          cursor: pointer
+          background-color: transparent
+          width: 4rem
+          height: 3.5rem
+          border: 1px solid $softBlue
+          border-radius: .3rem
+          outline: none
+          display: flex
+          align-items: center
+          justify-content: center
+          transition: .3s
+          &:hover
+            background-color: #FF4040
+            border: 1px solid #FF4040
       .movie-rate
         font-size: 1.4rem
         font-weight: $bold
