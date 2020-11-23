@@ -16,7 +16,7 @@ const MoviesList = ({ moviesList, loading }) => {
 					})}
 				</div>
 			) : (
-				(content = <NoResults />)
+				(console.log("here"), (content = <NoResults />))
 			);
 	}
 	return content;

@@ -5,11 +5,8 @@ const Header = () => {
 	const home = useRef();
 	const about = useRef();
 
-	console.log("render");
-
 	const lineThroughLink = () => {
 		if (window.location.pathname === "/") {
-			console.log("in");
 			home.current.classList.add("line-through");
 			about.current.classList.remove("line-through");
 		} else if (window.location.pathname === "/about") {

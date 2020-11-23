@@ -75,8 +75,9 @@ const MovieDetails = ({ match }) => {
 		if (movie !== "") {
 			content = (
 				<div className='movie-details-container'>
-					<Link to='/'>
-						<img className='back-home' src={back} alt='' />
+					<Link className='back-home-link' to='/'>
+						<img className='back-home-img' src={back} alt='' />
+						<span className='back-home-span'>Back to Search</span>
 					</Link>
 
 					<div className='movie-data-container'>

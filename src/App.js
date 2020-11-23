@@ -4,7 +4,7 @@ import "./style/css/main.css";
 import Home from "./components/Home/Home";
 import Aside from "./components/Aside/Aside";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
-import FavoritesList from "./components/FavoritesList/FavoritesList";
+import Favorites from "./components/Favorites/Favorites";
 import About from "./components/About/About";
 import Header from "./components/Header/Header";
 
@@ -16,7 +16,7 @@ const App = () => {
 				<Switch>
 					<Route exact path='/' component={Home}></Route>
 					<Route exact path='/about' component={About}></Route>
-					<Route exact path='/favorites' component={FavoritesList}></Route>
+					<Route exact path='/favorites' component={Favorites}></Route>
 					<Route path='/:id' component={MovieDetails}></Route>
 				</Switch>
 				<Aside />

@@ -8,9 +8,9 @@ const About = () => {
 				<h2>About me</h2>
 				<div className='dash'></div>
 				<p>
-					My name is Nuno and I am a junior frontend developer.
+					My name is Nuno and I am a turning into a frontend developer.
 					<br />
-					More of my projects can be viewed{" "}
+					More of my projects can be reached{" "}
 					<a target='blank' href='https://github.com/nunojllemos/'>
 						here
 					</a>
@@ -25,7 +25,7 @@ const About = () => {
 					</a>{" "}
 					interviews challenge. It was developed using Sass and React JS.
 					<br />
-					Coded is all available on this{" "}
+					Code is all available in this{" "}
 					<a target='blank' href='https://github.com/nunojllemos/movie-search'>
 						repository
 					</a>
