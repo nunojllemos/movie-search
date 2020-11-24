@@ -27,6 +27,8 @@ const Favorites = () => {
 								setFavoriteMovies(movies);
 								setLoading(false);
 							}
+						} else {
+							setLoading(false);
 						}
 					});
 			});
