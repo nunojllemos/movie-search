@@ -9,6 +9,7 @@ const Footer = () => {
 			</p>
 		</aside>
 	);
+
 	return content;
 };
 

@@ -1,0 +1,153 @@
+@import './variables'
+
+@media screen and (max-width: 430px)
+  // header
+  header
+    width: 100%
+    border-radius: 0
+    margin-bottom: 0
+    ul
+      li
+        height: 8rem
+        font-size: 2rem
+        .fav-circle
+          position: relative
+          border: .3rem solid $darkBlue
+          width: 7rem
+          height: 7rem
+          top: 0
+          left: 0
+
+  // search
+  form
+    width: 90%
+    label
+      font-size: 1.6rem
+
+  // land page
+  .land-page-wrapper
+    width: 90%
+    margin-top: 5rem
+    justify-content: center
+    .land-page-image
+      background-size: 90%
+    h2
+      text-align: start
+      font-size: 4.5rem
+
+  // movies list
+  .movies-list
+    width: 90%
+    grid-template-columns: 1fr
+    row-gap: 13rem
+    padding: 3rem 0 15rem 0
+  // movie card
+  .card-link
+    justify-self: center
+    img
+    .card
+      width: 25rem
+      height: 28rem
+
+      .heart-full
+        display: none
+      .movie-info
+        display: grid
+        grid-template-columns: 4fr 1fr
+        grid-template-rows: 1fr
+        opacity: 1
+        height: 10rem
+        top: 28rem
+        h2
+          font-size: 1.4rem
+          grid-area: 1 / 1 / 2 / 2
+        p
+          grid-area: 2 / 1 / 3 / 2
+        img
+          position: static
+          justify-self: flex-end
+          grid-area: 1 / 2 / span 2 / 3
+
+  //movie details 
+  .movie-details-container
+    .back-home-link
+      margin-left: 5%
+    .movie-data-container
+      flex-direction: column-reverse
+      align-items: center
+      .movie-info-container
+        width: 90%
+        h1
+          font-size: 3.5rem
+        ul
+          display: flex
+          justify-content: center
+      .movie-poster-container
+        width: 90%
+        justify-content: center
+        margin-bottom: 5rem
+        .movie-poster
+          justify-content: center
+          img
+            width: 30rem
+
+  //about 
+  .about-container
+    width: 100%
+    margin: 0
+    border-radius: 0
+    flex-direction: column
+    .bg-about
+      width: 100%
+      height: 30rem
+      margin: 2rem 0
+    .info-about
+      margin-bottom: 2rem
+      width: 100%
+      align-items: flex-start
+      padding: 3rem
+      p
+        font-size: 2.2rem
+      h2
+        line-height: 4.5rem
+        margin-bottom: 2rem
+
+  // no results 
+  .no-results-wrapper
+    width: 100%
+    height: 100%
+    filter: none
+    border-radius: 0
+    margin: 0
+    .bg-image
+      background-size: 80%
+      background-position: top
+      padding: 5%
+      h2
+        margin: 15rem 0 2rem 0
+        line-height: 6rem
+      p
+        font-size: 2.5rem
+        line-height: 3rem
+
+  // 404
+  .wrapper
+    width: 100%
+    height: 100%
+    border-radius: 0
+    margin: 0
+    flex-direction: column
+    padding: 5%
+    filter: none
+    .image
+      width: 100%
+      height: 50%
+    .info
+      width: 100%
+      p
+        font-size: 2rem
+        line-height: 3rem
+
+  // aside
+  aside
+    display: none

@@ -14,11 +14,6 @@ const NotFound = () => {
 				<h2>404</h2>
 				<div className='dash'></div>
 				<p>The page you are looking for could not be found.</p>
-				<button onClick={setSessionStorage}>
-					<Link className='home-link' to='/'>
-						Home
-					</Link>
-				</button>
 			</div>
 		</div>
 	);

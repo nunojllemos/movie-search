@@ -6,34 +6,34 @@ import MoviesList from "../MoviesList/MoviesList";
 
 const Home = () => {
 	// session storage
-	const getSessionStorageData = (data) => {
-		return JSON.parse(window.sessionStorage.getItem(data));
-	};
-
 	const setSessionStorageData = (data) => {
 		window.sessionStorage.setItem("search", JSON.stringify(data));
 	};
 
 	// state
-	const [search, setSearch] = useState("");
+	const [search, setSearch] = useState(
+		JSON.parse(window.sessionStorage.getItem("search"))
+			? JSON.parse(window.sessionStorage.getItem("search"))
+			: ""
+	);
 	const [moviesList, setMoviesList] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const firstLoad = useRef(true);
+	const [loading, setLoading] = useState();
+	const isFirstLoad = useRef(true);
 
 	const handleSubmit = (search) => {
 		setSearch(search);
 	};
 
-	const fetchData = (title) => {
+	const fetchData = () => {
 		setLoading(true);
 
 		const searchResult = axios
-			.get(`http://www.omdbapi.com/?apikey=443f62b0&s=${title}`)
+			.get(`http://www.omdbapi.com/?apikey=443f62b0&s=${search}`)
 			.then((res) => {
 				if (res.data.Response === "True") {
 					// store results found in moviesList state
 					setMoviesList(res.data.Search);
-					setSessionStorageData(title);
+					setSessionStorageData(search);
 					setLoading(false);
 				} else {
 					// no results found
@@ -45,17 +45,15 @@ const Home = () => {
 		return searchResult;
 	};
 
-	// Lifecycle
 	useEffect(() => {
-		// console.log("here");
+		if (window.sessionStorage.getItem("search")) {
+			isFirstLoad.current = false;
+		}
 
-		if (!firstLoad.current) {
-			fetchData(search);
+		if (isFirstLoad.current) {
+			isFirstLoad.current = false;
 		} else {
-			if (getSessionStorageData("search") !== null) {
-				setSearch(getSessionStorageData("search"));
-			}
-			firstLoad.current = false;
+			fetchData();
 		}
 	}, [search]);
 
@@ -63,7 +61,7 @@ const Home = () => {
 	let content = (
 		<>
 			<Search handleSubmit={handleSubmit} />
-			{firstLoad.current ? (
+			{isFirstLoad.current ? (
 				<LandPage />
 			) : (
 				<MoviesList loading={loading} moviesList={moviesList} />

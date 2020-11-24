@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import Spinner from "../Spinner/Spinner";
-// import NoResults from "../NoResults/NoResults";
-// import MovieCard from "../MovieCard/MovieCard";
 import MoviesList from "../MoviesList/MoviesList";
 
 const Favorites = () => {
@@ -14,7 +11,7 @@ const Favorites = () => {
 
 	useEffect(() => {
 		let movies = [];
-		let i = 0;
+		let elementsCount = 0;
 
 		if (favorites) {
 			favorites.map((id) => {
@@ -22,8 +19,8 @@ const Favorites = () => {
 					.get(`http://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
 					.then((res) => {
 						if (res.data.Response === "True") {
-							if (i + 1 !== favorites.length) {
-								i++;
+							if (elementsCount + 1 !== favorites.length) {
+								elementsCount++;
 								movies.push(res.data);
 							} else {
 								movies.push(res.data);
@@ -33,22 +30,8 @@ const Favorites = () => {
 						}
 					});
 			});
-		} else {
-			setLoading(false);
 		}
 	}, []);
-
-	// if (!loading) {
-	// 	if (favoriteMovies.length > 0) {
-	// 		return favoriteMovies.map((movie) => {
-	// 			return <MovieCard movie={movie} />;
-	// 		});
-	// 	} else {
-	// 		return <NoResults />;
-	// 	}
-	// } else {
-	// 	return <Spinner />;
-	// }
 
 	return <MoviesList loading={loading} moviesList={favoriteMovies} />;
 };

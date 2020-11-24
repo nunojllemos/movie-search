@@ -7,12 +7,12 @@ import noImage from "../../images/no-photo.svg";
 const MovieCard = ({ movie }) => {
 	const heartFullFav = useRef();
 	const heartFav = useRef();
+	const favorites = JSON.parse(window.sessionStorage.getItem("favorites"));
 
 	useEffect(() => {
-		let favorites = JSON.parse(window.sessionStorage.getItem("favorites"));
 		if (favorites) {
-			favorites.forEach((favorite) => {
-				if (favorite === movie.imdbID) {
+			favorites.forEach((favoriteMovie) => {
+				if (favoriteMovie === movie.imdbID) {
 					heartFullFav.current.classList.add("view");
 					heartFav.current.src = heartFull;
 				}

@@ -6,21 +6,24 @@ const Search = ({ handleSubmit }) => {
 	const clear = useRef();
 	const label = useRef();
 
-	const handleInputChange = (e) => {
-		if (input.current.value !== "") {
+	const showClearButton = (element) => {
+		if (element.value !== "") {
 			clear.current.classList.add("show");
 		} else {
 			clear.current.classList.remove("show");
 		}
+	};
 
+	const handleInputOnChange = (e) => {
+		showClearButton(e.target);
 		setSearch(e.target.value);
 	};
 
-	const handleInputFocus = () => {
+	const upLabel = () => {
 		label.current.classList.add("up");
 	};
 
-	const handleInputOutOfFocus = () => {
+	const downLabel = () => {
 		if (input.current.value === "") {
 			label.current.classList.remove("up");
 		}
@@ -37,9 +40,8 @@ const Search = ({ handleSubmit }) => {
 
 	useEffect(() => {
 		if (window.sessionStorage.getItem("search")) {
-			document.querySelector("input[type=text]").value = JSON.parse(
-				window.sessionStorage.getItem("search")
-			);
+			input.current.value = JSON.parse(window.sessionStorage.getItem("search"));
+			setSearch(input.current.value);
 		}
 
 		if (input.current.value !== "") {
@@ -62,9 +64,9 @@ const Search = ({ handleSubmit }) => {
 				name='movie'
 				className='input'
 				type='text'
-				onChange={handleInputChange}
-				onFocus={handleInputFocus}
-				onBlur={handleInputOutOfFocus}
+				onChange={handleInputOnChange}
+				onFocus={upLabel}
+				onBlur={downLabel}
 				ref={input}
 			/>
 			<p onClick={clearInput} ref={clear} className='delete-input-data'>

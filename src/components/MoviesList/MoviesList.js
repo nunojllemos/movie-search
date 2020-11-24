@@ -5,20 +5,22 @@ import Spinner from "../Spinner/Spinner";
 
 const MoviesList = ({ moviesList, loading }) => {
 	let content;
+
 	if (loading) {
 		content = <Spinner />;
 	} else {
 		content =
-			moviesList.length !== 0 ? (
+			moviesList.length > 0 ? (
 				<div className='movies-list'>
 					{moviesList.map((movie) => {
 						return <MovieCard movie={movie} />;
 					})}
 				</div>
 			) : (
-				(console.log("here"), (content = <NoResults />))
+				(content = <NoResults />)
 			);
 	}
+
 	return content;
 };
 

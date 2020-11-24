@@ -10,6 +10,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -141,7 +142,6 @@ form .up {
 
 header {
   width: 22rem;
-  height: 4rem;
   background-color: #ff6584;
   border-radius: 0 0 1rem 1rem;
   margin-bottom: 5rem;
@@ -173,7 +173,6 @@ header ul li {
 
 header ul li .nav-link {
   text-decoration: none;
-  height: 2rem;
 }
 
 header ul li .nav-link:visited {
@@ -630,18 +629,6 @@ aside p #heart, aside p #name {
   line-height: 2rem;
 }
 
-.wrapper .info button {
-  margin-top: 4rem;
-  background-color: #ff6584;
-  border: none;
-  padding: .75rem 3rem;
-}
-
-.wrapper .info button .home-link {
-  color: #fff;
-  text-decoration: none;
-}
-
 .spinner {
   margin: auto;
   -webkit-animation: rotator 1.5s linear infinite;
@@ -800,5 +787,216 @@ aside p #heart, aside p #name {
 
 .about-container .info-about p a:visited {
   color: #ff6584;
+}
+
+@media screen and (max-width: 430px) {
+  header {
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+  header ul li {
+    height: 8rem;
+    font-size: 2rem;
+  }
+  header ul li .fav-circle {
+    position: relative;
+    border: 0.3rem solid #2f2e41;
+    width: 7rem;
+    height: 7rem;
+    top: 0;
+    left: 0;
+  }
+  form {
+    width: 90%;
+  }
+  form label {
+    font-size: 1.6rem;
+  }
+  .land-page-wrapper {
+    width: 90%;
+    margin-top: 5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .land-page-wrapper .land-page-image {
+    background-size: 90%;
+  }
+  .land-page-wrapper h2 {
+    text-align: start;
+    font-size: 4.5rem;
+  }
+  .movies-list {
+    width: 90%;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    row-gap: 13rem;
+    padding: 3rem 0 15rem 0;
+  }
+  .card-link {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .card-link .card {
+    width: 25rem;
+    height: 28rem;
+  }
+  .card-link .card .heart-full {
+    display: none;
+  }
+  .card-link .card .movie-info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 4fr 1fr;
+        grid-template-columns: 4fr 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    opacity: 1;
+    height: 10rem;
+    top: 28rem;
+  }
+  .card-link .card .movie-info h2 {
+    font-size: 1.4rem;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .card-link .card .movie-info p {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .card-link .card .movie-info img {
+    position: static;
+    justify-self: flex-end;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 2 / span 2 / 3;
+  }
+  .movie-details-container .back-home-link {
+    margin-left: 5%;
+  }
+  .movie-details-container .movie-data-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .movie-details-container .movie-data-container .movie-info-container {
+    width: 90%;
+  }
+  .movie-details-container .movie-data-container .movie-info-container h1 {
+    font-size: 3.5rem;
+  }
+  .movie-details-container .movie-data-container .movie-info-container ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .movie-details-container .movie-data-container .movie-poster-container {
+    width: 90%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 5rem;
+  }
+  .movie-details-container .movie-data-container .movie-poster-container .movie-poster {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .movie-details-container .movie-data-container .movie-poster-container .movie-poster img {
+    width: 30rem;
+  }
+  .about-container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about-container .bg-about {
+    width: 100%;
+    height: 30rem;
+    margin: 2rem 0;
+  }
+  .about-container .info-about {
+    margin-bottom: 2rem;
+    width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 3rem;
+  }
+  .about-container .info-about p {
+    font-size: 2.2rem;
+  }
+  .about-container .info-about h2 {
+    line-height: 4.5rem;
+    margin-bottom: 2rem;
+  }
+  .no-results-wrapper {
+    width: 100%;
+    height: 100%;
+    -webkit-filter: none;
+            filter: none;
+    border-radius: 0;
+    margin: 0;
+  }
+  .no-results-wrapper .bg-image {
+    background-size: 80%;
+    background-position: top;
+    padding: 5%;
+  }
+  .no-results-wrapper .bg-image h2 {
+    margin: 15rem 0 2rem 0;
+    line-height: 6rem;
+  }
+  .no-results-wrapper .bg-image p {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    margin: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5%;
+    -webkit-filter: none;
+            filter: none;
+  }
+  .wrapper .image {
+    width: 100%;
+    height: 50%;
+  }
+  .wrapper .info {
+    width: 100%;
+  }
+  .wrapper .info p {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  aside {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

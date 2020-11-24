@@ -1,46 +1,55 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
 	const home = useRef();
 	const about = useRef();
 
-	const lineThroughLink = () => {
-		if (window.location.pathname === "/") {
-			home.current.classList.add("line-through");
-			about.current.classList.remove("line-through");
-		} else if (window.location.pathname === "/about") {
-			home.current.classList.remove("line-through");
-			about.current.classList.add("line-through");
-		} else {
-			home.current.classList.remove("line-through");
-			about.current.classList.remove("line-through");
+	const setLineThroughLink = () => {
+		switch (window.location.pathname) {
+			case "/":
+				home.current.classList.add("line-through");
+				about.current.classList.remove("line-through");
+				break;
+			case "/about":
+				home.current.classList.remove("line-through");
+				about.current.classList.add("line-through");
+				break;
+			default:
+				home.current.classList.remove("line-through");
+				about.current.classList.remove("line-through");
+				break;
 		}
 	};
 
 	const clearSearchData = () => {
-		if (window.location.pathname !== "/") {
-			if (window.sessionStorage.getItem("search")) {
-				window.sessionStorage.removeItem("search");
-			}
+		if (window.sessionStorage.getItem("search")) {
+			window.sessionStorage.removeItem("search");
 		}
 	};
 
+	useEffect(() => {
+		setLineThroughLink();
+	}, []);
+
 	let content = (
-		<header onClick={lineThroughLink}>
+		<header onClick={setLineThroughLink}>
 			<nav>
 				<ul>
 					<li>
 						<Link
 							onClick={clearSearchData}
 							ref={home}
-							className='nav-link line-through'
+							className='nav-link'
 							to='/'>
 							Home
 						</Link>
 					</li>
 					<li>
-						<Link className='nav-link' to='/favorites'>
+						<Link
+							className='nav-link'
+							to='/favorites'
+							onClick={clearSearchData}>
 							<div className='fav-circle'></div>
 						</Link>
 					</li>
