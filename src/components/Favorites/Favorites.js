@@ -16,7 +16,7 @@ const Favorites = () => {
 		if (favorites) {
 			favorites.map((id) => {
 				return axios
-					.get(`http://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
+					.get(`https://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
 					.then((res) => {
 						if (res.data.Response === "True") {
 							if (elementsCount + 1 !== favorites.length) {

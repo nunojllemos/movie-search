@@ -66,15 +66,17 @@ const MovieDetails = ({ match }) => {
 	};
 
 	useEffect(() => {
-		axios.get(`http://www.omdbapi.com/?apikey=443f62b0&i=${id}`).then((res) => {
-			if (res.data.Response === "True") {
-				setMovie(res.data);
-				setLoading(false);
-			} else {
-				setMovie("");
-				setLoading(false);
-			}
-		});
+		axios
+			.get(`https://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
+			.then((res) => {
+				if (res.data.Response === "True") {
+					setMovie(res.data);
+					setLoading(false);
+				} else {
+					setMovie("");
+					setLoading(false);
+				}
+			});
 	}, [id]);
 
 	let content = <Spinner />;
