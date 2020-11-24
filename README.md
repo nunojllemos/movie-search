@@ -17,7 +17,7 @@ It was developed using:
   * ##### useState, useEffect, useRef 🎣
   * ##### react-router-dom 🔗
 * #### Sass 🖌
-* #### axios
+* #### [axios](https://github.com/axios/axios)
 * #### [OMDb API](https://www.omdbapi.com/)
 
 It was developed for 📱 mobile (`max-width: 430px`) and 💻 desktop.
