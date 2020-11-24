@@ -270,7 +270,7 @@ aside p #heart, aside p #name {
 }
 
 .card:hover > .movie-info {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .card .movie-info {
