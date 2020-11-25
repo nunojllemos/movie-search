@@ -8,29 +8,32 @@
     margin-bottom: 0
     ul
       li
-        height: 8rem
+        height: 6rem
         font-size: 2rem
         .fav-circle
           position: relative
           border: .3rem solid $darkBlue
-          width: 7rem
-          height: 7rem
-          top: 0
+          width: 8rem
+          height: 8rem
+          top: 2rem
           left: 0
 
   // search
   form
     width: 90%
+    margin-top: 1rem
+    input
+      border-radius: 0
     label
       font-size: 1.6rem
 
   // land page
   .land-page-wrapper
     width: 90%
-    margin-top: 5rem
     justify-content: center
     .land-page-image
-      background-size: 90%
+      height: 30rem
+      background-size: 80%
     h2
       text-align: start
       font-size: 4.5rem
@@ -41,6 +44,7 @@
     grid-template-columns: 1fr
     row-gap: 13rem
     padding: 3rem 0 15rem 0
+
   // movie card
   .card-link
     justify-self: center
@@ -70,6 +74,7 @@
 
   //movie details 
   .movie-details-container
+    text-align: center
     .back-home-link
       margin-left: 5%
     .movie-data-container
@@ -77,8 +82,19 @@
       align-items: center
       .movie-info-container
         width: 90%
+        .movie-info
+          margin: 0rem
+        .check
+          margin-bottom: -2rem
+          text-align: left
+        .title, .text
+          text-align: left
+        .plot
+          .text
+            text-align: justify
         h1
           font-size: 3.5rem
+          margin: 2rem
         ul
           display: flex
           justify-content: center
@@ -115,7 +131,6 @@
   // no results 
   .no-results-wrapper
     width: 100%
-    height: 100%
     filter: none
     border-radius: 0
     margin: 0
@@ -123,12 +138,18 @@
       background-size: 80%
       background-position: top
       padding: 5%
+      height: 65vh
       h2
         margin: 15rem 0 2rem 0
         line-height: 6rem
+        font-size: 5.5rem
       p
         font-size: 2.5rem
         line-height: 3rem
+
+  // spinner
+  .spinner
+    margin: 25rem 0
 
   // 404
   .wrapper

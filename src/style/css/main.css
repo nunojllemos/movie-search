@@ -25,8 +25,7 @@ html {
 }
 
 html .app-container {
-  max-width: 1200px;
-  height: 100vh;
+  max-width: 120rem;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -107,8 +106,6 @@ form .up {
 
 .land-page-wrapper {
   width: 75%;
-  height: 50rem;
-  margin-top: 20rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,7 +120,7 @@ form .up {
 
 .land-page-wrapper .land-page-image {
   width: 100%;
-  height: 800px;
+  height: 50rem;
   background-image: url(../../images/home_cinema.svg);
   background-size: 45%;
   background-repeat: no-repeat;
@@ -131,9 +128,14 @@ form .up {
 }
 
 .land-page-wrapper h2 {
-  margin-top: 4rem;
   color: #f5f5f5;
   font-size: 5rem;
+}
+
+.land-page-wrapper .slogan {
+  color: #f5f5f5;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 .land-page-wrapper span {
@@ -528,7 +530,6 @@ aside p #heart, aside p #name {
 
 .no-results-wrapper {
   padding: 5rem 0;
-  min-height: 40rem;
   width: 60%;
   background-color: #f5f5f5;
   display: -webkit-box;
@@ -539,13 +540,13 @@ aside p #heart, aside p #name {
           justify-content: center;
   -webkit-filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.6));
           filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.6));
-  margin: 22rem auto;
+  margin: 10rem 0;
   border-radius: 5rem 0;
 }
 
 .no-results-wrapper .bg-image {
   width: 65rem;
-  height: 100%;
+  height: 30rem;
   background-image: url(../../images/web_search.svg);
   background-size: 60%;
   background-repeat: no-repeat;
@@ -801,32 +802,36 @@ aside p #heart, aside p #name {
     margin-bottom: 0;
   }
   header ul li {
-    height: 8rem;
+    height: 6rem;
     font-size: 2rem;
   }
   header ul li .fav-circle {
     position: relative;
     border: 0.3rem solid #2f2e41;
-    width: 7rem;
-    height: 7rem;
-    top: 0;
+    width: 8rem;
+    height: 8rem;
+    top: 2rem;
     left: 0;
   }
   form {
     width: 90%;
+    margin-top: 1rem;
+  }
+  form input {
+    border-radius: 0;
   }
   form label {
     font-size: 1.6rem;
   }
   .land-page-wrapper {
     width: 90%;
-    margin-top: 5rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
   .land-page-wrapper .land-page-image {
-    background-size: 90%;
+    height: 30rem;
+    background-size: 80%;
   }
   .land-page-wrapper h2 {
     text-align: start;
@@ -885,6 +890,9 @@ aside p #heart, aside p #name {
     -ms-grid-column-span: 1;
     grid-area: 1 / 2 / span 2 / 3;
   }
+  .movie-details-container {
+    text-align: center;
+  }
   .movie-details-container .back-home-link {
     margin-left: 5%;
   }
@@ -900,8 +908,22 @@ aside p #heart, aside p #name {
   .movie-details-container .movie-data-container .movie-info-container {
     width: 90%;
   }
+  .movie-details-container .movie-data-container .movie-info-container .movie-info {
+    margin: 0rem;
+  }
+  .movie-details-container .movie-data-container .movie-info-container .check {
+    margin-bottom: -2rem;
+    text-align: left;
+  }
+  .movie-details-container .movie-data-container .movie-info-container .title, .movie-details-container .movie-data-container .movie-info-container .text {
+    text-align: left;
+  }
+  .movie-details-container .movie-data-container .movie-info-container .plot .text {
+    text-align: justify;
+  }
   .movie-details-container .movie-data-container .movie-info-container h1 {
     font-size: 3.5rem;
+    margin: 2rem;
   }
   .movie-details-container .movie-data-container .movie-info-container ul {
     display: -webkit-box;
@@ -957,7 +979,6 @@ aside p #heart, aside p #name {
   }
   .no-results-wrapper {
     width: 100%;
-    height: 100%;
     -webkit-filter: none;
             filter: none;
     border-radius: 0;
@@ -967,14 +988,19 @@ aside p #heart, aside p #name {
     background-size: 80%;
     background-position: top;
     padding: 5%;
+    height: 65vh;
   }
   .no-results-wrapper .bg-image h2 {
     margin: 15rem 0 2rem 0;
     line-height: 6rem;
+    font-size: 5.5rem;
   }
   .no-results-wrapper .bg-image p {
     font-size: 2.5rem;
     line-height: 3rem;
+  }
+  .spinner {
+    margin: 25rem 0;
   }
   .wrapper {
     width: 100%;

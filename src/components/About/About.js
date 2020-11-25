@@ -8,7 +8,7 @@ const About = () => {
 				<h2>About me</h2>
 				<div className='dash'></div>
 				<p>
-					My name is Nuno and I am a turning into a frontend developer.
+					My name is Nuno and I am turning into a frontend developer.
 					<br />
 					More of my projects can be reached{" "}
 					<a target='blank' href='https://github.com/nunojllemos/'>

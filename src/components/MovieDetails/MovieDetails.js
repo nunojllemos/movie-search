@@ -120,7 +120,7 @@ const MovieDetails = ({ match }) => {
 								</li>
 							</ul>
 							<h1>{movie.Title}</h1>
-							<p>Check them at:</p>
+							<p className='check title'>Check it at:</p>
 							<ul>
 								<li>
 									<div className='rating-container'>
