@@ -4,10 +4,12 @@ import heart from "../../images/heart-white.svg";
 import heartFull from "../../images/heart-full.svg";
 import noImage from "../../images/no-photo.svg";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, path }) => {
 	const heartFullFav = useRef();
 	const heartFav = useRef();
 	const favorites = JSON.parse(window.sessionStorage.getItem("favorites"));
+
+	console.log(path);
 
 	useEffect(() => {
 		if (favorites) {
@@ -21,7 +23,7 @@ const MovieCard = ({ movie }) => {
 	}, []);
 
 	let content = (
-		<Link className='card-link' to={`/${movie.imdbID}`}>
+		<Link className='card-link' to={`${path}${movie.imdbID}`}>
 			<div
 				className='card'
 				style={{

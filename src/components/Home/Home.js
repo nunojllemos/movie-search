@@ -25,8 +25,6 @@ const Home = () => {
 	};
 
 	const fetchData = () => {
-		setLoading(true);
-
 		const searchResult = axios
 			.get(`https://www.omdbapi.com/?apikey=443f62b0&s=${search}`)
 			.then((res) => {
@@ -53,6 +51,7 @@ const Home = () => {
 		if (isFirstLoad.current) {
 			isFirstLoad.current = false;
 		} else {
+			setLoading(true);
 			fetchData();
 		}
 	}, [search]);
@@ -62,9 +61,9 @@ const Home = () => {
 		<>
 			<Search handleSubmit={handleSubmit} />
 			{isFirstLoad.current ? (
-				<LandPage />
+				<LandPage loading={loading} />
 			) : (
-				<MoviesList loading={loading} moviesList={moviesList} />
+				<MoviesList path={"/"} loading={loading} moviesList={moviesList} />
 			)}
 		</>
 	);

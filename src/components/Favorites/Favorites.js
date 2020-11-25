@@ -35,7 +35,13 @@ const Favorites = () => {
 		}
 	}, []);
 
-	return <MoviesList loading={loading} moviesList={favoriteMovies} />;
+	return (
+		<MoviesList
+			path={"/favorites/"}
+			loading={loading}
+			moviesList={favoriteMovies}
+		/>
+	);
 };
 
 export default Favorites;

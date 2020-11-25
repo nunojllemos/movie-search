@@ -3,17 +3,15 @@ import MovieCard from "../MovieCard/MovieCard";
 import NoResults from "../NoResults/NoResults";
 import Spinner from "../Spinner/Spinner";
 
-const MoviesList = ({ moviesList, loading }) => {
-	let content;
+const MoviesList = ({ moviesList, loading, path }) => {
+	let content = <Spinner />;
 
-	if (loading) {
-		content = <Spinner />;
-	} else {
+	if (!loading) {
 		content =
 			moviesList.length > 0 ? (
 				<div className='movies-list'>
 					{moviesList.map((movie) => {
-						return <MovieCard movie={movie} />;
+						return <MovieCard path={path} movie={movie} />;
 					})}
 				</div>
 			) : (

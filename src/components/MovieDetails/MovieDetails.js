@@ -10,6 +10,7 @@ const MovieDetails = ({ match }) => {
 	const [loading, setLoading] = useState(true);
 	const favoriteDiv = useRef(null);
 	const isFavorite = useRef(false);
+	const pathname = useRef(window.location.pathname);
 	const id = match.params.id;
 
 	let favorites = window.sessionStorage.getItem("favorites")
@@ -81,13 +82,21 @@ const MovieDetails = ({ match }) => {
 
 	let content = <Spinner />;
 
+	console.log(pathname);
+	console.log(`/${id}`);
+
 	if (!loading) {
 		if (movie !== "") {
 			content = (
 				<div className='movie-details-container'>
-					<Link className='back-home-link' to='/'>
+					<Link
+						className='back-home-link'
+						to={pathname.current === `/favorites/${id}` ? "/favorites" : "/"}>
 						<img className='back-home-img' src={back} alt='' />
-						<span className='back-home-span'>Back to Search</span>
+						<span className='back-home-span'>
+							Back to{" "}
+							{pathname.current === `/favorites/${id}` ? "Favorites" : "Search"}
+						</span>
 					</Link>
 
 					<div className='movie-data-container'>
