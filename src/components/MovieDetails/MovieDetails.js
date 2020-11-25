@@ -66,6 +66,13 @@ const MovieDetails = ({ match }) => {
 		ref.current.classList.remove(remove);
 	};
 
+	const getRotenTomatoesId = (title) => {
+		const splitWords = title.split(" ");
+		const rotenTomatoesId = splitWords.join("_");
+
+		return rotenTomatoesId;
+	};
+
 	useEffect(() => {
 		axios
 			.get(`https://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
@@ -113,10 +120,15 @@ const MovieDetails = ({ match }) => {
 								</li>
 							</ul>
 							<h1>{movie.Title}</h1>
+							<p>Check them at:</p>
 							<ul>
 								<li>
 									<div className='rating-container'>
-										<div className='imdb icon'></div>
+										<a
+											target='blank'
+											href={`https://www.imdb.com/title/${id}/?ref_=fn_al_tt_1`}>
+											<div className='imdb icon'></div>
+										</a>
 										<div className='rating'>
 											{movie.Ratings.length > 0
 												? movie.Ratings[0].Value
@@ -126,7 +138,13 @@ const MovieDetails = ({ match }) => {
 								</li>
 								<li>
 									<div className='rating-container'>
-										<div className='rotten-tomatoes icon'></div>
+										<a
+											target='blank'
+											href={`https://www.rottentomatoes.com/m/${getRotenTomatoesId(
+												movie.Title
+											)}`}>
+											<div className='rotten-tomatoes icon'></div>
+										</a>
 										<div className='rating'>
 											{movie.Ratings.length > 1
 												? movie.Ratings[1].Value

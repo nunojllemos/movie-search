@@ -1,12 +1,17 @@
 import React from "react";
 
-const NoResults = () => {
+const NoResults = ({ path }) => {
 	let content = (
 		<div className='no-results-wrapper'>
 			<div className='bg-image'>
-				<h2>No results!</h2>
+				<h2>No {path === "/" ? "results!" : "Favorites!"}</h2>
 				<div className='dash'></div>
-				<p>Sorry! No results for the searched movie.</p>
+				<p>
+					Sorry!{" "}
+					{path === "/"
+						? "No results for the searched movie."
+						: "No Favorites were saved yet!"}
+				</p>
 			</div>
 		</div>
 	);

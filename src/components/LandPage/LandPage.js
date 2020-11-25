@@ -2,6 +2,7 @@ import React from "react";
 import Spinner from "../Spinner/Spinner";
 
 const LandPage = ({ loading }) => {
+	console.log("landpage");
 	let content = <Spinner />;
 
 	if (!loading) {

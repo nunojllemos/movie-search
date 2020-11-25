@@ -6,17 +6,19 @@ import Spinner from "../Spinner/Spinner";
 const MoviesList = ({ moviesList, loading, path }) => {
 	let content = <Spinner />;
 
-	if (!loading) {
-		content =
-			moviesList.length > 0 ? (
-				<div className='movies-list'>
-					{moviesList.map((movie) => {
-						return <MovieCard path={path} movie={movie} />;
-					})}
-				</div>
-			) : (
-				(content = <NoResults />)
-			);
+	if (loading !== undefined) {
+		if (!loading) {
+			content =
+				moviesList.length > 0 ? (
+					<div className='movies-list'>
+						{moviesList.map((movie) => {
+							return <MovieCard path={path} movie={movie} />;
+						})}
+					</div>
+				) : (
+					(content = <NoResults path={path} />)
+				);
+		}
 	}
 
 	return content;

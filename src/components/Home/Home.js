@@ -18,6 +18,7 @@ const Home = () => {
 	);
 	const [moviesList, setMoviesList] = useState([]);
 	const [loading, setLoading] = useState();
+
 	const isFirstLoad = useRef(true);
 
 	const handleSubmit = (search) => {
@@ -60,7 +61,7 @@ const Home = () => {
 	let content = (
 		<>
 			<Search handleSubmit={handleSubmit} />
-			{isFirstLoad.current ? (
+			{!search ? (
 				<LandPage loading={loading} />
 			) : (
 				<MoviesList path={"/"} loading={loading} moviesList={moviesList} />

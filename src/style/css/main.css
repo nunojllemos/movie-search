@@ -485,7 +485,12 @@ aside p #heart, aside p #name {
   letter-spacing: 0.15rem;
 }
 
-.movie-data-container .movie-info-container ul .rating-container .imdb {
+.movie-data-container .movie-info-container ul .rating-container a {
+  display: block;
+  height: 100%;
+}
+
+.movie-data-container .movie-info-container ul .rating-container a .imdb {
   border: 1px solid #FF9F1C;
   background-color: #FF9F1C;
   background-image: url(../../images/logo-imdb.svg);
@@ -585,7 +590,7 @@ aside p #heart, aside p #name {
   background-color: #fff;
   -webkit-filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.6));
           filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.6));
-  margin: 36rem auto;
+  margin: 15rem auto;
   border-radius: 5rem 0;
   overflow: hidden;
 }
