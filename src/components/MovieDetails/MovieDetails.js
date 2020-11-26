@@ -57,8 +57,6 @@ const MovieDetails = ({ match }) => {
 				isFavorite.current = true;
 			}
 		}
-
-		console.log(favorites);
 	};
 
 	const changeFavoriteButton = (ref, add, remove) => {
@@ -88,9 +86,6 @@ const MovieDetails = ({ match }) => {
 	}, [id]);
 
 	let content = <Spinner />;
-
-	console.log(pathname);
-	console.log(`/${id}`);
 
 	if (!loading) {
 		if (movie !== "") {

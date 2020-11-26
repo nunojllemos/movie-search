@@ -9,8 +9,6 @@ const MovieCard = ({ movie, path }) => {
 	const heartFav = useRef();
 	const favorites = JSON.parse(window.sessionStorage.getItem("favorites"));
 
-	console.log(path);
-
 	useEffect(() => {
 		if (favorites) {
 			favorites.forEach((favoriteMovie) => {

@@ -399,12 +399,6 @@ aside p #heart, aside p #name {
   transition: .2s;
 }
 
-.movie-data-container .movie-info-container ul .favorite-container .bg-heart:hover {
-  background-color: #FF4040;
-  background-image: url(../../images/heart-full.svg);
-  border: 1px solid #FF4040;
-}
-
 .movie-data-container .movie-info-container ul .favorite-container .fav {
   background-color: #FF4040;
   background-image: url(../../images/heart-full.svg);
@@ -526,6 +520,14 @@ aside p #heart, aside p #name {
   border-radius: 1rem;
   -webkit-filter: drop-shadow(0 0.3rem 0.4rem black);
           filter: drop-shadow(0 0.3rem 0.4rem black);
+}
+
+@media all and (min-width: 450px) {
+  .movie-data-container .movie-info-container ul .favorite-container .bg-heart:hover {
+    background-color: #FF4040;
+    background-image: url(../../images/heart-full.svg);
+    border: 1px solid #FF4040;
+  }
 }
 
 .no-results-wrapper {
@@ -805,6 +807,9 @@ aside p #heart, aside p #name {
     height: 6rem;
     font-size: 2rem;
   }
+  header ul li .nav-link:link, header ul li .nav-link:visited, header ul li .nav-link:active {
+    color: #f5f5f5;
+  }
   header ul li .fav-circle {
     position: relative;
     border: 0.3rem solid #2f2e41;
@@ -812,6 +817,7 @@ aside p #heart, aside p #name {
     height: 8rem;
     top: 2rem;
     left: 0;
+    background-image: url(../../images/heart-full-red.svg);
   }
   form {
     width: 90%;

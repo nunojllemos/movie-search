@@ -10,6 +10,11 @@
       li
         height: 6rem
         font-size: 2rem
+        .nav-link
+          &:link,
+          &:visited,
+          &:active
+            color: $gray
         .fav-circle
           position: relative
           border: .3rem solid $darkBlue
@@ -17,6 +22,7 @@
           height: 8rem
           top: 2rem
           left: 0
+          background-image: url(../../images/heart-full-red.svg)
 
   // search
   form
@@ -98,6 +104,9 @@
         ul
           display: flex
           justify-content: center
+          .favorite-container
+            .bg-heart:hover
+
       .movie-poster-container
         width: 90%
         justify-content: center

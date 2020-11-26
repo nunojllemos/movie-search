@@ -54,10 +54,6 @@
           background-repeat: no-repeat
           background-position: center
           transition: .2s
-          &:hover
-            background-color: #FF4040
-            background-image: url(../../images/heart-full.svg)
-            border: 1px solid #FF4040
         .fav
           background-color: #FF4040
           background-image: url(../../images/heart-full.svg)
@@ -138,3 +134,14 @@
         width: 40rem
         border-radius: 1rem
         filter: drop-shadow(0 .3rem .4rem black)
+
+@media all and (min-width: 450px)
+  .movie-data-container
+    .movie-info-container
+      ul
+        .favorite-container
+          .bg-heart
+            &:hover
+              background-color: #FF4040
+              background-image: url(../../images/heart-full.svg)
+              border: 1px solid #FF4040

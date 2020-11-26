@@ -13,23 +13,31 @@ const Favorites = () => {
 		let movies = [];
 		let elementsCount = 0;
 
+		console.log(favorites);
+
 		if (favorites) {
-			favorites.map((id) => {
-				return axios
-					.get(`https://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
-					.then((res) => {
-						if (res.data.Response === "True") {
-							if (elementsCount + 1 !== favorites.length) {
-								elementsCount++;
-								movies.push(res.data);
+			if (favorites.length > 0) {
+				favorites.map((id) => {
+					return axios
+						.get(`https://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
+						.then((res) => {
+							if (res.data.Response === "True") {
+								if (elementsCount + 1 !== favorites.length) {
+									elementsCount++;
+									movies.push(res.data);
+								} else {
+									movies.push(res.data);
+									setFavoriteMovies(movies);
+									setLoading(false);
+								}
 							} else {
-								movies.push(res.data);
-								setFavoriteMovies(movies);
 								setLoading(false);
 							}
-						}
-					});
-			});
+						});
+				});
+			} else {
+				setLoading(false);
+			}
 		} else {
 			setLoading(false);
 		}
