@@ -27,7 +27,7 @@ const Home = () => {
 
 	const fetchData = () => {
 		const searchResult = axios
-			.get(`https://www.omdbapi.com/?apikey=443f62b0&s=${search}`)
+			.get(`https://www.omdbapi.com/?apikey=be290818&s=${search}`)
 			.then((res) => {
 				if (res.data.Response === "True") {
 					// store results found in moviesList state

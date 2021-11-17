@@ -73,7 +73,7 @@ const MovieDetails = ({ match }) => {
 
 	useEffect(() => {
 		axios
-			.get(`https://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
+			.get(`https://www.omdbapi.com/?apikey=be290818&i=${id}`)
 			.then((res) => {
 				if (res.data.Response === "True") {
 					setMovie(res.data);

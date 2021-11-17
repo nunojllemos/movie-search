@@ -19,7 +19,7 @@ const Favorites = () => {
 			if (favorites.length > 0) {
 				favorites.map((id) => {
 					return axios
-						.get(`https://www.omdbapi.com/?apikey=443f62b0&i=${id}`)
+						.get(`https://www.omdbapi.com/?apikey=be290818&i=${id}`)
 						.then((res) => {
 							if (res.data.Response === "True") {
 								if (elementsCount + 1 !== favorites.length) {
